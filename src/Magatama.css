@@ -1,0 +1,15 @@
+th,
+td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+@font-face {
+    font-family: 'timesnewarial';
+    src: local('timesnewarial'), url(./fonts/timesnewarial.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'KarlaRegular';
+    src: local('KarlaRegular'), url(./fonts/KarlaRegular.ttf) format("truetype");
+}
