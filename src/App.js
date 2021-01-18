@@ -3,12 +3,12 @@ import './App.css';
 import {generateSkill, parseSkillObjectArray} from './skill';
 import makeMagatama from './Magatama';
 import { useCallback } from 'react';
-import { renderToString } from 'react-dom/server'
-import ReactHtmlParser from 'react-html-parser'
-import bg from './images/smt_bg3.png'
-import './fonts/timesnewarial.ttf'
-import './fonts/KarlaRegular.ttf'
-import logo from './images/smt3LogoV2.png'
+import { renderToString } from 'react-dom/server';
+import ReactHtmlParser from 'react-html-parser';
+import bg from './images/smt_bg3.png';
+import './fonts/timesnewarial.ttf';
+import './fonts/KarlaRegular.ttf';
+import logo from './images/smt3LogoV2.png';
 import { render } from 'react-dom';
 //import magatamaList from './generateMagatamas'
 
