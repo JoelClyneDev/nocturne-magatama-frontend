@@ -1,0 +1,36 @@
+import React, { useEffect, useState } from "react";
+function Dashboard() {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
+  const loadData = useCallback(() => {
+    // Functions passed to hooks cannot be async
+    async function makeRequest() {
+      try {
+        setLoading(true);
+        const resp = await fetch('/api/data');
+        if (resp.ok) {
+          setData(resp.json());
+        } else {
+          setError(`Error calling API: ${resp.status} ${resp.statusText}`);
+        }
+      } catch (e) {
+        setError(`Error making API call: ${e.toString()}`);
+      } finally {
+        setLoading(false);
+      }
+    }
+    makeRequest();
+  }, [setLoading, setData, setError]);
+  useEffect(() => {
+    // Kick off data loading on initial render
+    loadData();
+  }, []);
+  if (error) {
+    return <p style={{ color: 'red' }}>{error}</p>;
+  }
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+  return <pre>{JSON.stringify(data, null, 2)}</pre>;
+}
