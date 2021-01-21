@@ -107,7 +107,7 @@ function App() {
     }
     //If the page is still loading, waiting for the response from the server, show that the page is loading
     if (loading) {
-    return <p>Loading...</p>;
+    return <p>Rejecting More Gods...</p>;
     }
 
     //If we're here, then the client has the data from the server
